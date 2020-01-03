@@ -68,7 +68,7 @@ func (s *SyncImpl) Resolve(forceUpdate bool) error {
 			if err != nil {
 				return err
 			}
-			if strings.HasSuffix(path, ".proto") {
+			if strings.HasSuffix(path, ".proto") || strings.HasSuffix(path, ".proto3") {
 				if s.isIgnorePath(protoRootDir, path, dep.Ignores) {
 					logger.Info("skipped %s due to ignore setting", path)
 				} else {
